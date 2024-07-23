@@ -1,0 +1,124 @@
+1) Calculate n!
+n = 10, 100, 1000, ..
+Print first 10 digits to verify the result
+
+================================================================================================
+Solution
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+
+class FindFactorial {
+    public static void main(String[] args) {
+        int range ;
+        int result ; 
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the number to calculate factorial : ");
+        range = sc.nextInt();
+        
+        result = calculateFactorial(range);
+        System.out.println("The current factorial value is " +result);
+    }
+    
+    public static int calculateFactorial(int range) {
+        int fact = 1;
+		
+        if(range < 10){
+		System.out.println("The current factorial range is less than 10, it's "+range );
+		}
+		
+        for (int i=1;i<=range;i++){
+            fact = fact * i;
+            if(!(range < 10 ))
+			// printing the first 10 factorial values as mentioned in the question.
+            System.out.println("The current factorial value for iteration "+i+" is " +fact);
+        }
+        return fact;
+    }
+}
+================================================================================================
+Output :
+
+java -cp /tmp/dRdA5PSoGZ/FindFactorial
+Enter the number to calculate factorial : 
+12
+The current factorial value for iteration 1 is 1
+The current factorial value for iteration 2 is 2
+The current factorial value for iteration 3 is 6
+The current factorial value for iteration 4 is 24
+The current factorial value for iteration 5 is 120
+The current factorial value for iteration 6 is 720
+The current factorial value for iteration 7 is 5040
+The current factorial value for iteration 8 is 40320
+The current factorial value for iteration 9 is 362880
+The current factorial value for iteration 10 is 3628800
+The current factorial value for iteration 11 is 39916800
+The current factorial value for iteration 12 is 479001600
+The current factorial value is 479001600
+
+=== Code Execution Successful ===
+
+================================================================================================
+================================================================================================
+================================================================================================
+
+2) Detect potential functional and execution issues:
+
+void transfer(Account from, Account to, int amount) {
+synchronized(from){
+   synchronized(to) {
+          from.debit(amount);
+          to.credit(amount);         
+   }
+}
+
+The above block of code is thread safe as it's synchronized. It means that only one thread will be allowed to execute in either of the blocks. In the above case a single thread will be executing on same object(from in this case), any other threads attenpting to execute will be blocked until this thread has completed the execution. This might cause a dead lock.
+
+================================================================================================
+================================================================================================
+================================================================================================
+
+3) Write a programe in any language to convert the below String to Integer.
+   Input String = "$180,240/y"
+   Output Integer = 180240
+   
+   Solution :
+   
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.lang.Character;
+
+class CovertStringToInt {
+    public static void main(String[] args) {
+        String words = "$180,240/y" ;
+        char[] letters = words.toCharArray();
+        
+        StringBuilder st = new StringBuilder();
+        
+        for(char word : letters){
+            System.out.println(word);
+            if((Character.isDigit(word)))
+            st.append(word);
+        }
+        System.out.println("The output is : "+st.toString());
+    }
+}
+
+Output :
+
+java -cp /tmp/uYmKuOARWo/CovertStringToInt
+$
+1
+8
+0
+,
+2
+4
+0
+/
+y
+The output is : 180240
+
+=== Code Execution Successful ===
+   
